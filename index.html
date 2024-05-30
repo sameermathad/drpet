@@ -12,24 +12,28 @@
 
     
     <!-- Navbar -->
-<header class="bg-white shadow sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16">
-            <div class="flex-shrink-0">
-                <a href="/" >
-            
-                <img src="assets/img/logo.png" href="#home" alt="DrPetLabs Logo" class="h-10 w-40">
-                </a>
+    <header class="bg-white shadow sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="/" >
+                        <img src="assets/img/logo.png" alt="DrPetLabs Logo" class="h-10 w-40">
+                    </a>
+                </div>
+                <div class="md:hidden">
+                    <button onclick="toggleMenu()" class="text-gray-800 focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+                <nav class="hidden md:flex space-x-4">
+                    <a href="#home" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-indigo-500 hover:text-white">Home</a>
+                    <a href="#services" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-indigo-500 hover:text-white">Services</a>
+                    <a href="#about" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-indigo-500 hover:text-white">About</a>
+                    <a href="https://wa.me/910000000000" target="_blank" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-indigo-500 hover:text-white">Contact</a>
+                </nav>
             </div>
-            <nav class="flex space-x-4">
-                <a href="#home" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-indigo-500 hover:text-white">Home</a>
-                <a href="#services" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-indigo-500 hover:text-white">Services</a>
-                <a href="#about" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-indigo-500 hover:text-white">About</a>
-                <a href="https://wa.me/910000000000" target="_blank" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-indigo-500 hover:text-white">Contact</a>
-            </nav>
         </div>
-    </div>
-</header>
+    </header>
 
     <!-- Hero Section -->
 
