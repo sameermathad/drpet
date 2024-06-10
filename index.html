@@ -15,229 +15,233 @@
     <style>
         /* Ensure the mobile menu has a background and is positioned correctly */
      
-     /* Ensure the mobile menu has a background and is positioned correctly */
-.mobile-menu {
-    /* display: none; Initially hidden */
-    position: fixed;
-    top: 0;
-    right: 0; /* Position it offscreen to the right */
-    height: 100vh; /* Use full viewport height */
-    width: 75%;
-    max-width: 300px;
-    background-color: white;
-    z-index: 50; /* Ensure it overlays other content */
-    transform: translateX(100%); /* Move it out of view */
-    transition: transform 0.3s ease;
-}
+        .mobile-menu {
+            /* display: none; Initially hidden */
+            position: fixed;
+            top: 0;
+            right: 0; /* Position it offscreen to the right */
+            height: 100vh; /* Use full viewport height */
+            width: 50%;
+            max-width: 300px;
+            background-color: white;
+            z-index: 50; /* Ensure it overlays other content */
+            transform: translateX(100%); /* Move it out of view */
+            transition: transform 0.3s ease;
+        }
 
-/* Show the mobile menu when active */
-.mobile-menu.active {
-    transform: translateX(0); /* Slide into view */
-}
+        /* Show the mobile menu when active */
+        .mobile-menu.active {
+            transform: translateX(0); /* Slide into view */
+        }
 
-.mobile-menu a {
-    padding: 1rem;
-    display: block;
-}
+        .mobile-menu a {
+            padding: 1rem;
+            display: block;
+        }
 
-/* Overlay for when the mobile menu is open */
-.mobile-menu-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 40;
-}
+        /* Overlay for when the mobile menu is open */
+        .mobile-menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 40;
+        }
 
-.mobile-menu-overlay.active {
-    display: block;
-}
+        .mobile-menu-overlay.active {
+            display: block;
+        }
 
-@media (min-width: 768px) {
-    .mobile-menu, .mobile-menu-overlay {
-        display: none; /* Ensures that the mobile menu is hidden on larger screens */
-    }
+        @media (min-width: 768px) {
+            .mobile-menu, .mobile-menu-overlay {
+                display: none; /* Ensures that the mobile menu is hidden on larger screens */
+            }
 
-    .desktop-menu {
-        display: flex; /* Show desktop menu on larger screens */
-    }
-}
+            .desktop-menu {
+                display: flex; /* Show desktop menu on larger screens */
+            }
+        }
 
-@media (max-width: 767px) {
-    .desktop-menu {
-        display: none; /* Hide desktop menu on smaller screens */
-    }
-}
+        @media (max-width: 767px) {
+            .desktop-menu {
+                display: none; /* Hide desktop menu on smaller screens */
+            }
+        }
 
-.hidden {
-    display: none !important;
-}
+        .hidden {
+            display: none !important;
+        }
 
-#menu-icon {
-    transition: transform 0.3s ease;
-}
+        #menu-icon {
+            transition: transform 0.3s ease;
+        }
 
-.menu-icon-active {
-    transform: rotate(90deg); /* Rotate the icon */
-}
-
+        .menu-icon-active {
+            transform: rotate(90deg); /* Rotate the icon */
+        }
 
         .icon {
-        color: #1531e7; /* Change this color as needed */
-        font-size: 2rem; /* Adjust size as needed */
-    }
-    .title {
-        font-family: 'Poppins', sans-serif; /* Example of a classy font */
-        font-weight:500;
-        font-size: 1.25rem; /* Adjust size as needed */
-        margin-top: 0.5rem;
-    }
+            color: #1531e7; /* Change this color as needed */
+            font-size: 2rem; /* Adjust size as needed */
+        }
 
-    .hero-title {
-        font-family: 'Poppins', sans-serif; /* Example of a classy font */
-        font-weight:800;
-        font-size: 3.3rem; /* Adjust size as needed */
-        margin-top: 0.5rem;
-        line-height: 1.05;
-    }
+        .title {
+            font-family: 'Poppins', sans-serif; /* Example of a classy font */
+            font-weight: 500;
+            font-size: 1.25rem; /* Adjust size as needed */
+            margin-top: 0.5rem;
+        }
 
-    .hero-title2 {
-        font-family: 'Poppins', sans-serif; /* Example of a classy font */
-        font-weight:600;
-        font-size: 3rem; /* Adjust size as needed */
-        /* margin-top: 0.5rem; */
-        line-height: 1.05; /* Adjust this value as needed */
+        .hero-title {
+            font-family: 'Poppins', sans-serif; /* Example of a classy font */
+            font-weight: 800;
+            font-size: 3.3rem; /* Adjust size as needed */
+            margin-top: 0.5rem;
+            line-height: 1.05;
+        }
 
-    }
-   
-    .listitem {
-        font-family: 'Open Sans', sans-serif; /* Example of a classy font */
-        font-weight:300;
-        font-size: 0.85rem; /* Adjust size as needed */
-        margin-top: 1.5rem;
-        
-    }
-    .bodyfont {
-        font-family: 'Open Sans', sans-serif; /* Example of a classy font */
-        font-weight:300;
-        font-size: 1rem; /* Adjust size as needed */
-        margin-top: 1.5rem;
-        
-    }
+        .hero-title2 {
+            font-family: 'Poppins', sans-serif; /* Example of a classy font */
+            font-weight: 600;
+            font-size: 3rem; /* Adjust size as needed */
+            /* margin-top: 0.5rem; */
+            line-height: 1.05; /* Adjust this value as needed */
+        }
 
-    .menu-font {
-        font-family: 'Open Sans', sans-serif; /* Example of a classy font */
-        font-weight:350;
-        font-size: 1rem; /* Adjust size as needed */
-        /* margin-top: 1.5rem; */
-        
-    }
+        .listitem {
+            font-family: 'Open Sans', sans-serif; /* Example of a classy font */
+            font-weight: 300;
+            font-size: 0.85rem; /* Adjust size as needed */
+            margin-top: 1.5rem;
+        }
 
-    .custom-font {
-        font-family: 'Open Sans', sans-serif; /* Change to your preferred font */
-        font-weight:600;
-        font-size: 2rem; /* Adjust size as needed */
-        margin-top: 0.5rem;
-    }
-    .modal {
+        .bodyfont {
+            font-family: 'Open Sans', sans-serif; /* Example of a classy font */
+            font-weight: 300;
+            font-size: 1rem; /* Adjust size as needed */
+            margin-top: 1.5rem;
+        }
+
+        .menu-font {
+            font-family: 'Open Sans', sans-serif; /* Example of a classy font */
+            font-weight: 350;
+            font-size: 1rem; /* Adjust size as needed */
+            /* margin-top: 1.5rem; */
+        }
+
+        .custom-font {
+            font-family: 'Open Sans', sans-serif; /* Change to your preferred font */
+            font-weight: 600;
+            font-size: 2rem; /* Adjust size as needed */
+            margin-top: 0.5rem;
+        }
+
+        .modal {
             display: none; /* Hidden by default */
             z-index: 100; /* Ensure it overlays other content */
         }
+
         .modal.active {
             display: flex; /* Show when active */
         }
+
         .modal-open {
             overflow: hidden; /* Prevent page scrolling */
         }
 
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 1000,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1000, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .how-it-works {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .workflow-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .workflow-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            margin-bottom: 40px;
+            flex: 1;
+        }
+
+        .workflow-step .icon {
+            font-size: 2rem;
+            color: #1531e7;
+            margin-bottom: 10px;
+        }
+
+        .workflow-step p {
+            font-size: 1.25rem;
+            color: #555;
+            max-width: 150px;
+        }
+
+        .workflow-step::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid #1531e7;
+            top: 100%; /* Position below the element */
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .workflow-step:last-child::after {
+            content: none;
+        }
+
+        @media (min-width: 768px) {
+            .workflow-container {
+                flex-direction: row;
+                justify-content: space-around;
+                width: 100%;
+            }
+
+            .workflow-step::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 100%;
+                width: 40px;
+                height: 2px;
+                background-color: #1531e7;
+                border: none;
+                transform: translateY(-50%);
+            }
+
+            .workflow-step:last-child::after {
+                content: none;
+            }
+        }
+
+        /* Custom CSS to hide the hero image on smaller screens and show on larger screens */
+.hero-image-hidden {
+    display: none;
 }
 
-.how-it-works {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-top: 50px;
-}
-
-.workflow-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.workflow-step {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    margin-bottom: 40px;
-    flex: 1;
-}
-
-.workflow-step .icon {
-    font-size: 2rem;
-    color: #1531e7;
-    margin-bottom: 10px;
-}
-
-.workflow-step p {
-    font-size: 1.25rem;
-    color: #555;
-    max-width: 150px;
-}
-
-.workflow-step::after {
-    content: '';
-    position: absolute;
-    width: 0; 
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid #1531e7;
-    top: 100%; /* Position below the element */
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.workflow-step:last-child::after {
-    content: none;
-}
-
-@media (min-width: 768px) {
-    .workflow-container {
-        flex-direction: row;
-        justify-content: space-around;
-        width: 100%;
+@media (min-width: 1024px) {
+    .hero-image-hidden {
+        display: block;
     }
-
-    .workflow-step::after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 100%;
-        width: 40px;
-        height: 2px;
-        background-color: #1531e7;
-        border: none;
-        transform: translateY(-50%);
-    }
-
-    .workflow-step:last-child::after {
-        content: none;
-    }
 }
-
-
 
     </style>
 </head>
@@ -285,25 +289,24 @@
     </div>
 
     <script>
-   function toggleMenu() {
-    const menu = document.querySelector('.mobile-menu');
-    const overlay = document.querySelector('.mobile-menu-overlay');
-    const menuIcon = document.getElementById('menu-icon');
+        function toggleMenu() {
+            const menu = document.querySelector('.mobile-menu');
+            const overlay = document.querySelector('.mobile-menu-overlay');
+            const menuIcon = document.getElementById('menu-icon');
 
-    menu.classList.toggle('active');
-    overlay.classList.toggle('active');
-    menuIcon.classList.toggle('menu-icon-active');
+            menu.classList.toggle('active');
+            overlay.classList.toggle('active');
+            menuIcon.classList.toggle('menu-icon-active');
 
-    // Toggle between bars and times icon
-    if (menuIcon.classList.contains('menu-icon-active')) {
-        menuIcon.classList.remove('fa-bars');
-        menuIcon.classList.add('fa-times');
-    } else {
-        menuIcon.classList.remove('fa-times');
-        menuIcon.classList.add('fa-bars');
-    }
-}
-
+            // Toggle between bars and times icon
+            if (menuIcon.classList.contains('menu-icon-active')) {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+            } else {
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            }
+        }
 
         function openModal(modalId) {
             document.getElementById(modalId).classList.add('active');
@@ -314,18 +317,14 @@
             document.getElementById(modalId).classList.remove('active');
             document.body.classList.remove('modal-open'); // Allow body scroll
         }
-
     </script>
-
-    
 
     <!-- Hero Section -->
     <section class="relative bg-indigo-600 overflow-hidden text-white">
-        <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between">
             <div class="py-8 px-4 sm:px-6 lg:px-8 z-10 lg:w-1/2">
                 <div class="text-left">
                     <h1 class="text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl">
-                        
                         <span class="block xl:inline text-4xl sm:text-5xl md:text-6xl hero-title">Convenient Pet Care,</span><br>
                         <span class="block xl:inline text-3xl sm:text-4xl md:text-5xl hero-title2">Right at Your Doorstep.</span>
                     </h1>
@@ -340,11 +339,14 @@
                     </div>
                 </div>
             </div>
-            <div class="hidden lg:block lg:w-1/2 lg:pt-5">
+            <div class="hero-image-hidden lg:w-1/2 lg:pt-5">
                 <img src="assets/img/hero.png" alt="Pet Care Image" class="h-full w-full object-cover" style="max-height: 1500px;">
             </div>
         </div>
+        </div>
     </section>
+
+
     
 
     <!-- How It Works Section -->
