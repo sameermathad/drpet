@@ -6,6 +6,12 @@
     <title>DrPetLabs</title>
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Two+Tone" rel="stylesheet">
     <style>
         /* Ensure the mobile menu has a background and is positioned correctly */
         .mobile-menu {
@@ -126,6 +132,15 @@
         .modal-open {
             overflow: hidden; /* Prevent page scrolling */
         }
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1000,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
@@ -244,17 +259,24 @@
         <h2 class="text-3xl font-bold text-center mt-16 custom-font">Comprehensive Tests</h2>
 
         <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <div  id="haematology" class= "bg-white p-6 shadow-lg rounded-lg text-center cursor-pointer" onclick="openModal('modal-haematology')">
-                <i class="fas fa-vial icon"></i>
-                <h3 class="title text-xl font-semibold">Haematology</h3>
+            <div id="haematology" class="bg-white p-6 shadow-lg rounded-lg text-center cursor-pointer flex flex-col" onclick="openModal('modal-haematology')">
+                <!-- <i class="fas fa-vial icon"></i> -->
+                <span class=" material-symbols-outlined icon">
+
+                    hematology
+                    </span>
+                      
+                <h3 class="title text-xl font-semibold">Hematology</h3>
                 <ul class="listitem text-gray-600 list-disc pl-5 text-left">
                     <li>CBC/CBP (Machine/Manual)</li>
                     <li>TEC, HB, PCV</li>
                     <li>MCV, MCH, MCHC</li>
                     <li>Platelets (Machine)</li>
+                    <a href="#haematology" class="text-blue-500 mt-auto self-end underline" onclick="event.stopPropagation(); openModal('modal-haematology')">More...</a>
                 </ul>
-                <a href="#haemotology" class="text-blue-500 mt-3 inline-block underline" onclick="openModal('modal-haematology')">More...</a>
+ 
             </div>
+            
             <div id="modal-haematology" class="modal hidden fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-75 flex items-center justify-center">
                 <div class="bg-white p-8 rounded-lg w-96">
                     <h3 class="text-xl font-bold mb-4">Haematology - Tests</h3>
@@ -264,10 +286,10 @@
                         <li>MCV, MCH, MCHC</li>
                         <li>Platelets (Machine)</li>
                         <li>TLC,DLC, Blood Cross Match (Manual)</li>
-                        <li>Reticulocyte Count</li>
-                        <li>Blood Smear Examination</li>
+                        <!-- <li>Reticulocyte Count</li> -->
+                        <li>Blood Cross Match(Manual)</li>
+                        <li>Blood Smear Examination - Morphology</li>
                         <li>Bone Marrow Examination</li>
-                        <li>Haemoglobin Electrophoresis</li>
                         <li>Haemoprotazoan Identification</li>
                         <li>Buffy Coat Examination</li>
                         <li>Saline Agglutination Test for IMHA(Manual)</li>
@@ -278,7 +300,11 @@
                 </div>
             </div>
             <div class="bg-white p-6 shadow-lg rounded-lg text-center">
-                <i class="fas fa-heartbeat icon"></i>
+                <span class=" material-symbols-outlined icon">
+
+                    ecg_heart
+                    </span>
+                      
                 <h3 class="title text-xl font-semibold">Coagulation Profile</h3>
                 <ul class="listitem mt-2 text-gray-600 list-disc pl-5 text-left">
                     <li>Platelets Count (Manual)</li>
@@ -288,7 +314,9 @@
                 </ul>
             </div>
             <div class="bg-white p-6 shadow-lg rounded-lg text-center">
-                <i class="fas fa-bacteria icon"></i>
+                <span class="material-symbols-outlined icon">
+                    microbiology
+                    </span>
                 <h3 class="title text-xl font-semibold">Microbiology</h3>
                 <ul class="listitem mt-2 text-gray-600 list-disc pl-5 text-left">
                     <li>Aerobic Culture & Sensitivity Test</li>
@@ -297,17 +325,22 @@
                 </ul>
             </div>
             <div class="bg-white p-6 shadow-lg rounded-lg text-center">
-                <i class="fas fa-dna icon"></i>
+                <span class="material-symbols-outlined icon">
+                    genetics
+                    </span>
                 <h3 class="title text-xl font-semibold">ELISA Based Tests</h3>
                 <ul class="listitem mt-2 text-gray-600 list-disc pl-5 text-left">
                     <li>Inflammatory Cytokines</li>
                     <li>Anti-Inflammatory Cytokines</li>
                     <li>Growth Factor</li>
                     <li>Disease specific Antibodies</li>
+                    <li>Immunoglobullin (lg G,M,A,E)</li>
                 </ul>
             </div>
             <div class="bg-white p-6 shadow-lg rounded-lg text-center">
-                <i class="fas fa-flask icon"></i>
+                <span class="material-symbols-outlined icon">
+                    experiment
+                    </span>
                 <h3 class="title text-xl font-semibold">Biochemistry</h3>
                 <ul class="listitem mt-2 text-gray-600 list-disc pl-5 text-left">
                     <li>Alkaline Phosphatase (ALP)</li>
@@ -317,7 +350,9 @@
                 </ul>
             </div>
             <div class="bg-white p-6 shadow-lg rounded-lg text-center">
-                <i class="fas fa-heart icon"></i>
+                <span class="material-symbols-outlined icon">
+                    cardio_load
+                    </span>
                 <h3 class="title text-xl font-semibold">Lipid Profile</h3>
                 <ul class="listitem mt-2 text-gray-600 list-disc pl-5 text-left">
                     <li>Total Cholesterol, HDL, LDL</li>
@@ -327,7 +362,9 @@
                 </ul>
             </div>
             <div class="bg-white p-6 shadow-lg rounded-lg text-center">
-                <i class="fas fa-tint icon"></i>
+                <span class="material-symbols-outlined icon">
+                    water_drop
+                    </span>
                 <h3 class="title text-xl font-semibold">Renal Profile</h3>
                 <ul class="listitem mt-2 text-gray-600 list-disc pl-5 text-left">
                     <li>Total Package</li>
@@ -337,17 +374,22 @@
                 </ul>
             </div>
             <div class="bg-white p-6 shadow-lg rounded-lg text-center">
-                <i class="fas fa-syringe icon"></i>
+                <span class="material-symbols-outlined icon">
+                    syringe
+                    </span>
                 <h3 class="title text-xl font-semibold">Pancreatic Profile</h3>
                 <ul class="listitem mt-2 text-gray-600 list-disc pl-5 text-left">
                     <li>Serum Amylase</li>
                     <li>Serum Lipase</li>
+                    <li>Canine Pancreatic Lipise(CPL)</li>
                     <li>Total Package-Dry Analyzer</li>
                     <li>Total Package-Wet Analyzer</li>
                 </ul>
             </div>
             <div class="bg-white p-6 shadow-lg rounded-lg text-center">
-                <i class="fas fa-water icon"></i>
+                <span class="material-symbols-outlined icon">
+                    salinity
+                    </span>
                 <h3 class="title text-xl font-semibold">Electrolytes Profile</h3>
                 <ul class="listitem mt-2 text-gray-600 list-disc pl-5 text-left">
                     <li>Sodium (Na+), Chloride (Cl-)</li>
@@ -357,7 +399,9 @@
                 </ul>
             </div>
             <div class="bg-white p-6 shadow-lg rounded-lg text-center">
-                <i class="fas fa-bone icon"></i>
+                <span class="material-symbols-outlined icon">
+                    pet_supplies
+                    </span>
                 <h3 class="title text-xl font-semibold">Calcium Phosphorus</h3>
                 <ul class="listitem mt-2 text-gray-600 list-disc pl-5 text-left">
                     <li>Total Serum Calcium</li>
@@ -365,24 +409,60 @@
                 </ul>
             </div>
             <div class="bg-white p-6 shadow-lg rounded-lg text-center">
-                <i class="fas fa-paw icon"></i>
+                <span class="material-symbols-outlined icon">
+                    pets
+                    </span>
                 <h3 class="title text-xl font-semibold">Canine & Feline Rapid/Snap Tests</h3>
                 <ul class="listitem mt-2 text-gray-600 list-disc pl-5 text-left">
                     <li>Feline Pancreatic Lipase (FPL)</li>
                     <li>Canine Pancreatic Lipase (CPA)</li>
                     <li>Canine Distemper Virus (CDV)</li>
                     <li>Combo (Parvo, Corona, Glardia)</li>
+                    <li>Leptostira</li>
                     <li>Rabies (Antibody Test)</li>
                 </ul>
             </div>
             <div class="bg-white p-6 shadow-lg rounded-lg text-center">
-                <i class="fas fa-vials icon"></i>
+                <span class="material-symbols-outlined icon">
+                    lab_panel
+                    </span>
                 <h3 class="title text-xl font-semibold">Complete Urine Examination</h3>
                 <ul class="listitem mt-2 text-gray-600 list-disc pl-5 text-left">
-                    <li>CUE</li>
-                    <li>PH, Specific gravity</li>
-                    <li>Protein, Glucose</li>
+                    <li>CUE, PH, Specific gravity</li>
+                    <li>Protein, Glucose, Bilirubin</li>
+                    <li>Ketone Bodies, Blood, Nitrate, Leucocytes</li>
                     <li>Microscopy (Wet mount & stained cytology)</li>
+                </ul>
+            </div>
+            <div class="bg-white p-6 shadow-lg rounded-lg text-center">
+                <span class="material-symbols-outlined icon">
+                    biotech
+                    </span>
+                <h3 class="title text-xl font-semibold">Pathology</h3>
+                <ul class="listitem mt-2 text-gray-600 list-disc pl-5 text-left">
+                    <li>Cytopathology & Biopsy</li>
+                    <li>Fnac, Imperssion Smeans</li>
+                    <li>Touch Smeans, Histopathology</li>
+                    
+                </ul>
+            </div>
+            <div class="bg-white p-6 shadow-lg rounded-lg text-center">
+                <span class="material-symbols-outlined icon">
+                    sound_detection_dog_barking                    </span>
+                <h3 class="title text-xl font-semibold">Molecular q-PCR(Canine)</h3>
+                <ul class="listitem mt-2 text-gray-600 list-disc pl-5 text-left">
+                    <li>Canine Distemper Virus(CDV)</li>
+                    <li>Leptostira, Parvo Virus, Rabies</li>
+                    <li>Brucella, Mycoplasma, Tick & Panel Profile</li>
+                </ul>
+            </div>
+            <div class="bg-white p-6 shadow-lg rounded-lg text-center">
+                <i class="fas fa-cat icon"></i>
+                <h3 class="title text-xl font-semibold">Molecular q-PCR(Feline)</h3>
+                <ul class="listitem mt-2 text-gray-600 list-disc pl-5 text-left">
+                    <li>Panleulcopenea, Infections Periponitis</li>
+                    <li>Immuno Deficiency, Fiv, Felv, Heart warm, Corona</li>
+                    <li>Parvo Virus</li>
                 </ul>
             </div>
         </div>
