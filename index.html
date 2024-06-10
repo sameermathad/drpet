@@ -57,6 +57,41 @@
                 display: flex; /* Show desktop menu on larger screens */
             }
         }
+
+
+        .icon {
+        color: #1531e7; /* Change this color as needed */
+        font-size: 2rem; /* Adjust size as needed */
+    }
+    .title {
+        font-family: 'Poppins', sans-serif; /* Example of a classy font */
+        font-weight:500;
+        font-size: 1.25rem; /* Adjust size as needed */
+        margin-top: 0.5rem;
+    }
+
+   
+    .listitem {
+        font-family: 'Poppins', sans-serif; /* Example of a classy font */
+        font-weight:300;
+        font-size: 0.85rem; /* Adjust size as needed */
+        margin-top: 1.5rem;
+        
+    }
+    .bodyfont {
+        font-family: 'Poppins', sans-serif; /* Example of a classy font */
+        font-weight:300;
+        font-size: 1rem; /* Adjust size as needed */
+        margin-top: 1.5rem;
+        
+    }
+
+    .custom-font {
+        font-family: 'Poppins', sans-serif; /* Change to your preferred font */
+        font-weight:600;
+        font-size: 2rem; /* Adjust size as needed */
+        margin-top: 0.5rem;
+    }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
@@ -104,11 +139,13 @@
             const overlay = document.querySelector('.mobile-menu-overlay');
             const burgerIcon = document.getElementById('burger-icon');
             const closeIcon = document.getElementById('close-icon');
-            
+            const desktopMenu = document.querySelector('.desktop-menu');
+
             menu.classList.toggle('active');
             overlay.classList.toggle('active');
             burgerIcon.classList.toggle('hidden');
             closeIcon.classList.toggle('hidden');
+            desktopMenu.classList.toggle('hidden');  // Hide the desktop menu
         }
     </script>
 
@@ -138,35 +175,173 @@
         </div>
     </section>
     
-    <!-- Additional Sections -->
-    <!-- Services Section -->
-    <section id="services" class="bg-gray-100 py-12">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center">Our Services</h2>
-            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-10">
-                <div class="bg-white p-6 shadow-lg rounded-lg">
-                    <h3 class="text-xl font-semibold">Home Blood Sample Collection</h3>
-                    <p class="mt-2 text-gray-600">We specialize in convenient, at-home blood collection services for pets, ensuring minimal stress for your pet and maximum convenience for you.</p>
-                </div>
-                <div class="bg-white p-6 shadow-lg rounded-lg">
-                    <h3 class="text-xl font-semibold">Veterinary Consultation</h3>
-                    <p class="mt-2 text-gray-600">Get expert health consultations for your pets from certified veterinarians, available both online and in-person.</p>
-                </div>
+
+
+<!-- Services Section -->
+<section id="services" class="bg-gray-100 py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-3 custom-font">Our Services</h2>
+
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-10 mb-16"> <!-- Added mb-16 here -->
+            <div class="bg-white p-6 shadow-lg rounded-lg">
+                <h3 class="text-xl font-bold title">Home Blood Sample Collection</h3>
+                <p class="mt-2 text-gray-600 listitem">We specialize in convenient, at-home blood collection services for pets, ensuring minimal stress for your pet and maximum convenience for you.</p>
+            </div>
+            <div class="bg-white p-6 shadow-lg rounded-lg">
+                <h3 class="text-xl font-extrabold title">Veterinary Consultation</h3>
+                <p class="mt-2 text-gray-600 listitem">Get expert health consultations for your pets from certified veterinarians, available both online and in-person.</p>
             </div>
         </div>
-    </section>
+
+        <h2 class="text-3xl font-bold text-center mt-16 custom-font">Comprehensive Tests</h2>
+
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div class="bg-white p-6 shadow-lg rounded-lg text-center">
+                <i class="fas fa-vial icon"></i>
+                <h3 class="title text-xl font-semibold">Haematology</h3>
+                <ul class="listitem text-gray-600 list-disc pl-5 text-left">
+                    <li>CBC/CBP (Machine/Manual)</li>
+                    <li>TEC, HB, PCV</li>
+                    <li>MCV, MCH, MCHC</li>
+                    <li>Platelets (Machine)</li>
+                </ul>
+            </div>
+            <div class="bg-white p-6 shadow-lg rounded-lg text-center">
+                <i class="fas fa-heartbeat icon"></i>
+                <h3 class="title text-xl font-semibold">Coagulation Profile</h3>
+                <ul class="listitem mt-2 text-gray-600 list-disc pl-5 text-left">
+                    <li>Platelets Count (Manual)</li>
+                    <li>Activated Partial Thromboplastin Time (APTT)</li>
+                    <li>D-Dimer</li>
+                    <li>C-Reactive Protein (CRP)</li>
+                </ul>
+            </div>
+            <div class="bg-white p-6 shadow-lg rounded-lg text-center">
+                <i class="fas fa-bacteria icon"></i>
+                <h3 class="title text-xl font-semibold">Microbiology</h3>
+                <ul class="listitem mt-2 text-gray-600 list-disc pl-5 text-left">
+                    <li>Aerobic Culture & Sensitivity Test</li>
+                    <li>Anaerobic Culture & Sensitivity Test</li>
+                    <li>Fungal Culture & Sensitivity Test</li>
+                </ul>
+            </div>
+            <div class="bg-white p-6 shadow-lg rounded-lg text-center">
+                <i class="fas fa-dna icon"></i>
+                <h3 class="title text-xl font-semibold">ELISA Based Tests</h3>
+                <ul class="listitem mt-2 text-gray-600 list-disc pl-5 text-left">
+                    <li>Inflammatory Cytokines</li>
+                    <li>Anti-Inflammatory Cytokines</li>
+                    <li>Growth Factor</li>
+                    <li>Disease specific Antibodies</li>
+                </ul>
+            </div>
+            <div class="bg-white p-6 shadow-lg rounded-lg text-center">
+                <i class="fas fa-flask icon"></i>
+                <h3 class="title text-xl font-semibold">Biochemistry</h3>
+                <ul class="listitem mt-2 text-gray-600 list-disc pl-5 text-left">
+                    <li>Alkaline Phosphatase (ALP)</li>
+                    <li>Total Protein (TP)</li>
+                    <li>Albumin, Globulin</li>
+                    <li>A.G.Ratio (AGR)</li>
+                </ul>
+            </div>
+            <div class="bg-white p-6 shadow-lg rounded-lg text-center">
+                <i class="fas fa-heart icon"></i>
+                <h3 class="title text-xl font-semibold">Lipid Profile</h3>
+                <ul class="listitem mt-2 text-gray-600 list-disc pl-5 text-left">
+                    <li>Total Cholesterol, HDL, LDL</li>
+                    <li>Triglycerides</li>
+                    <li>VLDL</li>
+                    <li>HDL:LDL Ratio</li>
+                </ul>
+            </div>
+            <div class="bg-white p-6 shadow-lg rounded-lg text-center">
+                <i class="fas fa-tint icon"></i>
+                <h3 class="title text-xl font-semibold">Renal Profile</h3>
+                <ul class="listitem mt-2 text-gray-600 list-disc pl-5 text-left">
+                    <li>Total Package</li>
+                    <li>Urea, BUN</li>
+                    <li>Creatinine</li>
+                    <li>Uric Acid (UA)</li>
+                </ul>
+            </div>
+            <div class="bg-white p-6 shadow-lg rounded-lg text-center">
+                <i class="fas fa-syringe icon"></i>
+                <h3 class="title text-xl font-semibold">Pancreatic Profile</h3>
+                <ul class="listitem mt-2 text-gray-600 list-disc pl-5 text-left">
+                    <li>Serum Amylase</li>
+                    <li>Serum Lipase</li>
+                    <li>Total Package-Dry Analyzer</li>
+                    <li>Total Package-Wet Analyzer</li>
+                </ul>
+            </div>
+            <div class="bg-white p-6 shadow-lg rounded-lg text-center">
+                <i class="fas fa-water icon"></i>
+                <h3 class="title text-xl font-semibold">Electrolytes Profile</h3>
+                <ul class="listitem mt-2 text-gray-600 list-disc pl-5 text-left">
+                    <li>Sodium (Na+), Chloride (Cl-)</li>
+                    <li>Potassium (K+)</li>
+                    <li>Ionised Calcium (ICA)</li>
+                    <li>Na:P Ratio (SPR)</li>
+                </ul>
+            </div>
+            <div class="bg-white p-6 shadow-lg rounded-lg text-center">
+                <i class="fas fa-bone icon"></i>
+                <h3 class="title text-xl font-semibold">Calcium Phosphorus</h3>
+                <ul class="listitem mt-2 text-gray-600 list-disc pl-5 text-left">
+                    <li>Total Serum Calcium</li>
+                    <li>Serum Phosphorus</li>
+                </ul>
+            </div>
+            <div class="bg-white p-6 shadow-lg rounded-lg text-center">
+                <i class="fas fa-paw icon"></i>
+                <h3 class="title text-xl font-semibold">Canine & Feline Rapid/Snap Tests</h3>
+                <ul class="listitem mt-2 text-gray-600 list-disc pl-5 text-left">
+                    <li>Feline Pancreatic Lipase (FPL)</li>
+                    <li>Canine Pancreatic Lipase (CPA)</li>
+                    <li>Canine Distemper Virus (CDV)</li>
+                    <li>Combo (Parvo, Corona, Glardia)</li>
+                    <li>Rabies (Antibody Test)</li>
+                </ul>
+            </div>
+            <div class="bg-white p-6 shadow-lg rounded-lg text-center">
+                <i class="fas fa-vials icon"></i>
+                <h3 class="title text-xl font-semibold">Complete Urine Examination</h3>
+                <ul class="listitem mt-2 text-gray-600 list-disc pl-5 text-left">
+                    <li>CUE</li>
+                    <li>PH, Specific gravity</li>
+                    <li>Protein, Glucose</li>
+                    <li>Microscopy (Wet mount & stained cytology)</li>
+                </ul>
+            </div>
+            <!-- <div class="bg-white p-6 shadow-lg rounded-lg text-center">
+                <i class="fas fa-microscope icon"></i>
+                <h3 class="title text-xl font-semibold">Pathology</h3>
+                <ul class="listitem mt-2 text-gray-600 list-disc pl-5 text-left">
+                    <li>Cytopathology & Biopsy</li>
+                    <li>Histopathology</li>
+                    <li>Molecular q-PCR</li>
+                    <li>Fnac, Touch Smears</li>
+                </ul>
+            </div> -->
+        </div>
+    </div>
+</section>
+
+
+
 
     <!-- About Us Section -->
     <section id="about" class="bg-white py-12">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center">About Us</h2>
-            <p class="mt-6 text-lg text-gray-700 text-center">
+            <h2 class="text-5xl font-bold text-center custom-font">About Us</h2>
+            <p class="mt-6 text-lg text-gray-700 text-center bodyfont">
                 At <strong>DrPetLabs</strong>, we are committed to providing exceptional veterinary care from the comfort of your own home. Founded by a team of passionate veterinary professionals and tech pioneers, we blend advanced medical expertise with innovative technology to offer stress-free home sample collection services for your beloved pets.
             </p>
-            <p class="mt-4 text-lg text-gray-700 text-center">
+            <p class="mt-4 text-lg text-gray-1000 text-center bodyfont">
                 Understanding the anxiety that pets and their owners often face when visiting a vet, we've designed our services to be as comforting and convenient as possible. This means no more stressful trips; just compassionate care delivered right to your doorstep. Our goal is to ensure that every pet receives the care they deserve without the hassle.
             </p>
-            <p class="mt-4 text-lg text-gray-700 text-center">
+            <p class="mt-4 text-lg text-gray-700 text-center bodyfont">
                 Our expert team is not just professionals in their fields—they are pet owners too, which drives them to provide the kind of care they would want for their own pets. This empathy and understanding guide every service we offer, from routine check-ups to essential diagnostics.
             </p>
             <div class="text-center mt-8">
