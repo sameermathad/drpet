@@ -94,14 +94,14 @@
     }
    
     .listitem {
-        font-family: 'Poppins', sans-serif; /* Example of a classy font */
+        font-family: 'Open Sans', sans-serif; /* Example of a classy font */
         font-weight:300;
         font-size: 0.85rem; /* Adjust size as needed */
         margin-top: 1.5rem;
         
     }
     .bodyfont {
-        font-family: 'Poppins', sans-serif; /* Example of a classy font */
+        font-family: 'Open Sans', sans-serif; /* Example of a classy font */
         font-weight:300;
         font-size: 1rem; /* Adjust size as needed */
         margin-top: 1.5rem;
@@ -109,7 +109,7 @@
     }
 
     .menu-font {
-        font-family: 'Poppins', sans-serif; /* Example of a classy font */
+        font-family: 'Open Sans', sans-serif; /* Example of a classy font */
         font-weight:350;
         font-size: 1rem; /* Adjust size as needed */
         /* margin-top: 1.5rem; */
@@ -117,7 +117,7 @@
     }
 
     .custom-font {
-        font-family: 'Poppins', sans-serif; /* Change to your preferred font */
+        font-family: 'Open Sans', sans-serif; /* Change to your preferred font */
         font-weight:600;
         font-size: 2rem; /* Adjust size as needed */
         margin-top: 0.5rem;
@@ -141,6 +141,84 @@
   'opsz' 24
 }
 
+.how-it-works {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.workflow-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.workflow-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-bottom: 40px;
+    flex: 1;
+}
+
+.workflow-step .icon {
+    font-size: 2rem;
+    color: #1531e7;
+    margin-bottom: 10px;
+}
+
+.workflow-step p {
+    font-size: 1.25rem;
+    color: #555;
+    max-width: 150px;
+}
+
+.workflow-step::after {
+    content: '';
+    position: absolute;
+    width: 0; 
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #1531e7;
+    top: 100%; /* Position below the element */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.workflow-step:last-child::after {
+    content: none;
+}
+
+@media (min-width: 768px) {
+    .workflow-container {
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .workflow-step::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        width: 40px;
+        height: 2px;
+        background-color: #1531e7;
+        border: none;
+        transform: translateY(-50%);
+    }
+
+    .workflow-step:last-child::after {
+        content: none;
+    }
+}
+
+
+
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
@@ -163,6 +241,7 @@
                 <!-- Regular desktop menu -->
                 <nav class="desktop-menu hidden space-x-4">
                     <a href="#home" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-indigo-500 hover:text-white menu-font">Home</a>
+                    <a href="#how-it-works" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-indigo-500 hover:text-white menu-font">How it works</a>
                     <a href="#services" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-indigo-500 hover:text-white menu-font">Services</a>
                     <a href="#about" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-indigo-500 hover:text-white menu-font">About</a>
                     <a href="https://wa.me/910000000000" target="_blank" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-indigo-500 hover:text-white menu-font">Contact</a>
@@ -217,6 +296,7 @@
             <div class="py-8 px-4 sm:px-6 lg:px-8 z-10 lg:w-1/2">
                 <div class="text-left">
                     <h1 class="text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl">
+                        
                         <span class="block xl:inline text-4xl sm:text-5xl md:text-6xl hero-title">Convenient Pet Care,</span><br>
                         <span class="block xl:inline text-3xl sm:text-4xl md:text-5xl hero-title2">Right at Your Doorstep.</span>
                     </h1>
@@ -225,7 +305,7 @@
                     </p>
                     <div class="mt-5 sm:mt-8">
                         <a href="https://wa.me/910000000000" target="_blank" class="w-full sm:w-auto flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50 md:py-4 md:text-lg md:px-10 title">
-                            <i class="fab fa-whatsapp mr-2"></i> <!-- Added margin-right (mr-2) -->
+                            <i class="fab fa-whatsapp mr-2 fa-beat"></i> <!-- Added margin-right (mr-2) -->
                             <span>Book Now</span>
                         </a>
                     </div>
@@ -238,24 +318,60 @@
     </section>
     
 
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works bg-white-100 py-12">
+        <h2 class="text-3xl font-bold mb-10 custom-font">How It Works</h2>
+        <div class="workflow-container mt-16 bodyfont">
+            <div class="workflow-step">
+                <i class="fa-brands fa-whatsapp icon"></i>
+                <p>Book your Appointment</p>
+            </div>
+            <div class="workflow-step ">
+                <i class="fa fa-motorcycle icon"></i>
+                <p>Agent reaches home and collects sample</p>
+            </div>
+            <div class="workflow-step">
+                <i class="fa fa-flask icon"></i>
+                <p>Sample sent to lab</p>
+            </div>
+            <div class="workflow-step">
+                <i class="fa-solid fa-file-medical icon"></i>
+                <p>Report generated</p>
+            </div>
+            <div class="workflow-step">
+                <i class="fas fa-mobile-alt icon"></i>
+                <p>Report sent to your phone</p>
+            </div>
+        </div>
+    </section>
 
-<!-- Services Section -->
+
+
  <!-- Services Section -->
  <section id="services" class="bg-gray-100 py-12">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold text-center mb-3 custom-font">Our Services</h2>
 
         <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-10 mb-16"> <!-- Added mb-16 here -->
-            <div class="bg-white p-6 shadow-lg rounded-lg">
-                <h3 class="text-xl font-bold title">Home Blood Sample Collection</h3>
+            <div class="bg-white p-6 shadow-lg rounded-lg text-center">
+                <span class="material-symbols-outlined icon">
+                    home_pin
+                    </span>
+                <h3 class="text-xl font-bold title ">Home Blood Sample Collection</h3>
                 <p class="mt-2 text-gray-600 listitem">We specialize in convenient, at-home blood collection services for pets, ensuring minimal stress for your pet and maximum convenience for you.</p>
             </div>
-            <div class="bg-white p-6 shadow-lg rounded-lg">
+            <div class="bg-white p-6 shadow-lg rounded-lg text-center">
+                <span class="material-symbols-outlined icon">
+                    stethoscope
+                    </span>
                 <h3 class="text-xl font-extrabold title">Veterinary Consultation</h3>
                 <p class="mt-2 text-gray-600 listitem">Get expert health consultations for your pets from certified veterinarians, available both online and in-person.</p>
             </div>
         </div>
+</section>
 
+<section id="comprehensive" class="bg-white-100 py-12">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold text-center mt-16 custom-font">Comprehensive Tests</h2>
 
         <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -337,6 +453,7 @@
                     <li>Immunoglobullin (lg G,M,A,E)</li>
                 </ul>
             </div>
+            
             <div class="bg-white p-6 shadow-lg rounded-lg text-center">
                 <span class="material-symbols-outlined icon">
                     experiment
@@ -351,7 +468,7 @@
             </div>
             <div class="bg-white p-6 shadow-lg rounded-lg text-center">
                 <span class="material-symbols-outlined icon">
-                    cardio_load
+                    labs
                     </span>
                 <h3 class="title text-xl font-semibold">Lipid Profile</h3>
                 <ul class="listitem mt-2 text-gray-600 list-disc pl-5 text-left">
@@ -473,7 +590,7 @@
 
 
     <!-- About Us Section -->
-    <section id="about" class="bg-white py-12">
+    <section id="about" class="bg-gray py-12">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-5xl font-bold text-center custom-font">About Us</h2>
             <p class="mt-6 text-lg text-gray-700 text-center bodyfont">
@@ -487,7 +604,7 @@
             </p>
             <div class="text-center mt-8">
                 <a href="https://wa.me/910000000000" target="_blank" class="bg-green-600 text-white font-bold py-2 px-4 rounded hover:bg-black transition-colors justify-center items-center space-x-2 title">
-                    <i class="fab fa-whatsapp"></i>
+                    <i class="fab fa-whatsapp fa-beat"></i>
                     <span>Book Now on WhatsApp</span>
                 </a>
             </div>
