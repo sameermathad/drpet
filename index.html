@@ -14,55 +14,75 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Two+Tone" rel="stylesheet">
     <style>
         /* Ensure the mobile menu has a background and is positioned correctly */
-        .mobile-menu {
-            display: none; /* Initially hidden */
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 75%;
-            max-width: 300px;
-            background-color: white;
-            z-index: 50; /* Ensure it overlays other content */
-            transform: translateX(-100%);
-            transition: transform 0.3s ease;
-        }
+     
+     /* Ensure the mobile menu has a background and is positioned correctly */
+.mobile-menu {
+    /* display: none; Initially hidden */
+    position: fixed;
+    top: 0;
+    right: 0; /* Position it offscreen to the right */
+    height: 100vh; /* Use full viewport height */
+    width: 75%;
+    max-width: 300px;
+    background-color: white;
+    z-index: 50; /* Ensure it overlays other content */
+    transform: translateX(100%); /* Move it out of view */
+    transition: transform 0.3s ease;
+}
 
-        /* Show the mobile menu when active */
-        .mobile-menu.active {
-            transform: translateX(0);
-        }
+/* Show the mobile menu when active */
+.mobile-menu.active {
+    transform: translateX(0); /* Slide into view */
+}
 
-        .mobile-menu a {
-            padding: 1rem;
-            display: block;
-        }
+.mobile-menu a {
+    padding: 1rem;
+    display: block;
+}
 
-        /* Overlay for when the mobile menu is open */
-        .mobile-menu-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 40;
-        }
+/* Overlay for when the mobile menu is open */
+.mobile-menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 40;
+}
 
-        .mobile-menu-overlay.active {
-            display: block;
-        }
+.mobile-menu-overlay.active {
+    display: block;
+}
 
-        @media (min-width: 768px) {
-            .mobile-menu, .mobile-menu-overlay {
-                display: none; /* Ensures that the mobile menu is hidden on larger screens */
-            }
+@media (min-width: 768px) {
+    .mobile-menu, .mobile-menu-overlay {
+        display: none; /* Ensures that the mobile menu is hidden on larger screens */
+    }
 
-            .desktop-menu {
-                display: flex; /* Show desktop menu on larger screens */
-            }
-        }
+    .desktop-menu {
+        display: flex; /* Show desktop menu on larger screens */
+    }
+}
+
+@media (max-width: 767px) {
+    .desktop-menu {
+        display: none; /* Hide desktop menu on smaller screens */
+    }
+}
+
+.hidden {
+    display: none !important;
+}
+
+#menu-icon {
+    transition: transform 0.3s ease;
+}
+
+.menu-icon-active {
+    transform: rotate(90deg); /* Rotate the icon */
+}
 
 
         .icon {
@@ -234,12 +254,11 @@
                 </div>
                 <div class="md:hidden">
                     <button onclick="toggleMenu()" class="text-gray-800 focus:outline-none">
-                        <i id="burger-icon" class="fas fa-bars"></i>
-                        <i id="close-icon" class="fas fa-times hidden"></i>
+                        <i id="menu-icon" class="fas fa-bars"></i>
                     </button>
                 </div>
                 <!-- Regular desktop menu -->
-                <nav class="desktop-menu hidden space-x-4">
+                <nav class="desktop-menu md:flex space-x-4">
                     <a href="#home" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-indigo-500 hover:text-white menu-font">Home</a>
                     <a href="#how-it-works" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-indigo-500 hover:text-white menu-font">How it works</a>
                     <a href="#services" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-indigo-500 hover:text-white menu-font">Services</a>
@@ -253,8 +272,12 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu-overlay" onclick="toggleMenu()"></div>
     <div class="mobile-menu fixed bg-white shadow-md">
+        <button onclick="toggleMenu()" class="text-gray-800 focus:outline-none p-4">
+            <i id="close-menu-icon" class="fas fa-bars"></i>
+        </button>
         <nav class="flex flex-col space-y-4 p-4">
             <a href="#home" class="text-gray-700 hover:bg-indigo-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium" onclick="toggleMenu()">Home</a>
+            <a href="#how-it-works" class="text-gray-700 hover:bg-indigo-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium" onclick="toggleMenu()">How it works</a>
             <a href="#services" class="text-gray-700 hover:bg-indigo-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium" onclick="toggleMenu()">Services</a>
             <a href="#about" class="text-gray-700 hover:bg-indigo-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium" onclick="toggleMenu()">About</a>
             <a href="https://wa.me/910000000000" target="_blank" class="text-gray-700 hover:bg-indigo-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium" onclick="toggleMenu()">Contact</a>
@@ -262,19 +285,25 @@
     </div>
 
     <script>
-        function toggleMenu() {
-            const menu = document.querySelector('.mobile-menu');
-            const overlay = document.querySelector('.mobile-menu-overlay');
-            const burgerIcon = document.getElementById('burger-icon');
-            const closeIcon = document.getElementById('close-icon');
-            const desktopMenu = document.querySelector('.desktop-menu');
+   function toggleMenu() {
+    const menu = document.querySelector('.mobile-menu');
+    const overlay = document.querySelector('.mobile-menu-overlay');
+    const menuIcon = document.getElementById('menu-icon');
 
-            menu.classList.toggle('active');
-            overlay.classList.toggle('active');
-            burgerIcon.classList.toggle('hidden');
-            closeIcon.classList.toggle('hidden');
-            desktopMenu.classList.toggle('hidden');  // Hide the desktop menu
-        }
+    menu.classList.toggle('active');
+    overlay.classList.toggle('active');
+    menuIcon.classList.toggle('menu-icon-active');
+
+    // Toggle between bars and times icon
+    if (menuIcon.classList.contains('menu-icon-active')) {
+        menuIcon.classList.remove('fa-bars');
+        menuIcon.classList.add('fa-times');
+    } else {
+        menuIcon.classList.remove('fa-times');
+        menuIcon.classList.add('fa-bars');
+    }
+}
+
 
         function openModal(modalId) {
             document.getElementById(modalId).classList.add('active');

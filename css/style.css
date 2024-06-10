@@ -928,6 +928,10 @@ video {
     margin-top: 1.25rem;
   }
 
+  .md\:flex {
+    display: flex;
+  }
+
   .md\:hidden {
     display: none;
   }
