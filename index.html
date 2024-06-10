@@ -70,6 +70,22 @@
         margin-top: 0.5rem;
     }
 
+    .hero-title {
+        font-family: 'Poppins', sans-serif; /* Example of a classy font */
+        font-weight:800;
+        font-size: 3.3rem; /* Adjust size as needed */
+        margin-top: 0.5rem;
+        line-height: 1.05;
+    }
+
+    .hero-title2 {
+        font-family: 'Poppins', sans-serif; /* Example of a classy font */
+        font-weight:600;
+        font-size: 3rem; /* Adjust size as needed */
+        /* margin-top: 0.5rem; */
+        line-height: 1.05; /* Adjust this value as needed */
+
+    }
    
     .listitem {
         font-family: 'Poppins', sans-serif; /* Example of a classy font */
@@ -83,6 +99,14 @@
         font-weight:300;
         font-size: 1rem; /* Adjust size as needed */
         margin-top: 1.5rem;
+        
+    }
+
+    .menu-font {
+        font-family: 'Poppins', sans-serif; /* Example of a classy font */
+        font-weight:350;
+        font-size: 1rem; /* Adjust size as needed */
+        /* margin-top: 1.5rem; */
         
     }
 
@@ -123,10 +147,10 @@
                 </div>
                 <!-- Regular desktop menu -->
                 <nav class="desktop-menu hidden space-x-4">
-                    <a href="#home" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-indigo-500 hover:text-white">Home</a>
-                    <a href="#services" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-indigo-500 hover:text-white">Services</a>
-                    <a href="#about" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-indigo-500 hover:text-white">About</a>
-                    <a href="https://wa.me/910000000000" target="_blank" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-indigo-500 hover:text-white">Contact</a>
+                    <a href="#home" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-indigo-500 hover:text-white menu-font">Home</a>
+                    <a href="#services" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-indigo-500 hover:text-white menu-font">Services</a>
+                    <a href="#about" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-indigo-500 hover:text-white menu-font">About</a>
+                    <a href="https://wa.me/910000000000" target="_blank" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-indigo-500 hover:text-white menu-font">Contact</a>
                 </nav>
             </div>
         </div>
@@ -178,14 +202,14 @@
             <div class="py-8 px-4 sm:px-6 lg:px-8 z-10 lg:w-1/2">
                 <div class="text-left">
                     <h1 class="text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl">
-                        <span class="block xl:inline text-4xl sm:text-5xl md:text-6xl">Convenient Pet Care,</span><br>
-                        <span class="block xl:inline text-3xl sm:text-4xl md:text-5xl">Right at Your Doorstep</span>
+                        <span class="block xl:inline text-4xl sm:text-5xl md:text-6xl hero-title">Convenient Pet Care,</span><br>
+                        <span class="block xl:inline text-3xl sm:text-4xl md:text-5xl hero-title2">Right at Your Doorstep.</span>
                     </h1>
-                    <p class="mt-2 text-base sm:mt-5 sm:text-lg sm:max-w-xl md:mt-5 md:text-xl">
+                    <p class="mt-2 text-base sm:mt-5 sm:text-lg sm:max-w-xl md:mt-5 md:text-xl bodyfont">
                         Hassle-free home sample collection for your pets. Experience the best in veterinary care without leaving your home.
                     </p>
                     <div class="mt-5 sm:mt-8">
-                        <a href="https://wa.me/910000000000" target="_blank" class="w-full sm:w-auto flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50 md:py-4 md:text-lg md:px-10">
+                        <a href="https://wa.me/910000000000" target="_blank" class="w-full sm:w-auto flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50 md:py-4 md:text-lg md:px-10 title">
                             <i class="fab fa-whatsapp mr-2"></i> <!-- Added margin-right (mr-2) -->
                             <span>Book Now</span>
                         </a>
@@ -220,7 +244,7 @@
         <h2 class="text-3xl font-bold text-center mt-16 custom-font">Comprehensive Tests</h2>
 
         <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <div  id="haematology" class= "bg-white p-6 shadow-lg rounded-lg text-center">
+            <div  id="haematology" class= "bg-white p-6 shadow-lg rounded-lg text-center cursor-pointer" onclick="openModal('modal-haematology')">
                 <i class="fas fa-vial icon"></i>
                 <h3 class="title text-xl font-semibold">Haematology</h3>
                 <ul class="listitem text-gray-600 list-disc pl-5 text-left">
@@ -243,7 +267,7 @@
                         <li>Reticulocyte Count</li>
                         <li>Blood Smear Examination</li>
                         <li>Bone Marrow Examination</li>
-                        <li>Hemoglobin Electrophoresis</li>
+                        <li>Haemoglobin Electrophoresis</li>
                         <li>Haemoprotazoan Identification</li>
                         <li>Buffy Coat Examination</li>
                         <li>Saline Agglutination Test for IMHA(Manual)</li>
@@ -382,7 +406,7 @@
                 Our expert team is not just professionals in their fields—they are pet owners too, which drives them to provide the kind of care they would want for their own pets. This empathy and understanding guide every service we offer, from routine check-ups to essential diagnostics.
             </p>
             <div class="text-center mt-8">
-                <a href="https://wa.me/910000000000" target="_blank" class="bg-green-600 text-white font-bold py-2 px-4 rounded hover:bg-black transition-colors justify-center items-center space-x-2">
+                <a href="https://wa.me/910000000000" target="_blank" class="bg-green-600 text-white font-bold py-2 px-4 rounded hover:bg-black transition-colors justify-center items-center space-x-2 title">
                     <i class="fab fa-whatsapp"></i>
                     <span>Book Now on WhatsApp</span>
                 </a>
