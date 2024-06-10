@@ -92,6 +92,16 @@
         font-size: 2rem; /* Adjust size as needed */
         margin-top: 0.5rem;
     }
+    .modal {
+            display: none; /* Hidden by default */
+            z-index: 100; /* Ensure it overlays other content */
+        }
+        .modal.active {
+            display: flex; /* Show when active */
+        }
+        .modal-open {
+            overflow: hidden; /* Prevent page scrolling */
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
@@ -147,7 +157,20 @@
             closeIcon.classList.toggle('hidden');
             desktopMenu.classList.toggle('hidden');  // Hide the desktop menu
         }
+
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+            document.body.classList.add('modal-open'); // Prevent body scroll
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+            document.body.classList.remove('modal-open'); // Allow body scroll
+        }
+
     </script>
+
+    
 
     <!-- Hero Section -->
     <section class="relative bg-indigo-600 overflow-hidden text-white">
@@ -197,7 +220,7 @@
         <h2 class="text-3xl font-bold text-center mt-16 custom-font">Comprehensive Tests</h2>
 
         <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <div class="bg-white p-6 shadow-lg rounded-lg text-center">
+            <div  id="haematology" class= "bg-white p-6 shadow-lg rounded-lg text-center">
                 <i class="fas fa-vial icon"></i>
                 <h3 class="title text-xl font-semibold">Haematology</h3>
                 <ul class="listitem text-gray-600 list-disc pl-5 text-left">
@@ -206,6 +229,29 @@
                     <li>MCV, MCH, MCHC</li>
                     <li>Platelets (Machine)</li>
                 </ul>
+                <a href="#haemotology" class="text-blue-500 mt-3 inline-block underline" onclick="openModal('modal-haematology')">More...</a>
+            </div>
+            <div id="modal-haematology" class="modal hidden fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-75 flex items-center justify-center">
+                <div class="bg-white p-8 rounded-lg w-96">
+                    <h3 class="text-xl font-bold mb-4">Haematology - More Tests</h3>
+                    <ul class="listitem text-gray-600 list-disc pl-5 text-left">
+                        <li>CBC/CBP (Machine/Manual)</li>
+                        <li>TEC, HB, PCV</li>
+                        <li>MCV, MCH, MCHC</li>
+                        <li>Platelets (Machine)</li>
+                        <li>TLC,DLC, Blood Cross Match (Manual)</li>
+                        <li>Reticulocyte Count</li>
+                        <li>Blood Smear Examination</li>
+                        <li>Bone Marrow Examination</li>
+                        <li>Hemoglobin Electrophoresis</li>
+                        <li>Haemoprotazoan Identification</li>
+                        <li>Buffy Coat Examination</li>
+                        <li>Saline Agglutination Test for IMHA(Manual)</li>
+                        <li>Blood Grouping - Kit Based</li>
+                        <!-- Add more items as needed -->
+                    </ul>
+                    <button onclick="closeModal('modal-haematology')" class="mt-4 bg-blue-500 text-white py-2 px-4 rounded">Close</button>
+                </div>
             </div>
             <div class="bg-white p-6 shadow-lg rounded-lg text-center">
                 <i class="fas fa-heartbeat icon"></i>
