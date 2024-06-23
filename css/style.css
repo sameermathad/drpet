@@ -601,9 +601,6 @@ video {
 .w-3 {
   width: 0.75rem;
 }
-.w-40 {
-  width: 10rem;
-}
 .w-96 {
   width: 24rem;
 }
@@ -633,6 +630,9 @@ video {
 }
 .flex-col {
   flex-direction: column;
+}
+.items-end {
+  align-items: flex-end;
 }
 .items-center {
   align-items: center;
@@ -773,6 +773,9 @@ video {
 }
 .text-center {
   text-align: center;
+}
+.align-bottom {
+  vertical-align: bottom;
 }
 .text-3xl {
   font-size: 1.875rem;
